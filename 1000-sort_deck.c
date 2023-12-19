@@ -1,5 +1,4 @@
 #include "deck.h"
-
 int _strcmp(const char *s1, const char *s2);
 char get_value(deck_node_t *card);
 void insertion_sort_deck_kind(deck_node_t **deck);
@@ -7,7 +6,7 @@ void insertion_sort_deck_value(deck_node_t **deck);
 void sort_deck(deck_node_t **deck);
 
 /**
- * _strcmp - This compares two strings.
+ * _strcmp - This function compares two strings.
  * @s1: the first string
  * @s2: The second string
  *
@@ -73,25 +72,25 @@ char get_value(deck_node_t *card)
  */
 void insertion_sort_deck_kind(deck_node_t **deck)
 {
-	deck_node_t *iter, *insert, *temp;
+	deck_node_t *itr, *insert, *temp;
 
-	for (iter = (*deck)->next; iter != NULL; iter = temp)
+	for (itr = (*deck)->next; itr != NULL; itr = temp)
 	{
-		temp = iter->next;
-		insert = iter->prev;
-		while (insert != NULL && insert->card->kind > iter->card->kind)
+		temp = itr->next;
+		insert = itr->prev;
+		while (insert != NULL && insert->card->kind > itr->card->kind)
 		{
-			insert->next = iter->next;
-			if (iter->next != NULL)
-				iter->next->prev = insert;
-			iter->prev = insert->prev;
-			iter->next = insert;
+			insert->next = itr->next;
+			if (itr->next != NULL)
+				itr->next->prev = insert;
+			itr->prev = insert->prev;
+			itr->next = insert;
 			if (insert->prev != NULL)
-				insert->prev->next = iter;
+				insert->prev->next = itr;
 			else
-				*deck = iter;
-			insert->prev = iter;
-			insert = iter->prev;
+				*deck = itr;
+			insert->prev = itr;
+			insert = itr->prev;
 		}
 	}
 }
@@ -103,27 +102,27 @@ void insertion_sort_deck_kind(deck_node_t **deck)
  */
 void insertion_sort_deck_value(deck_node_t **deck)
 {
-	deck_node_t *iter, *insert, *temp;
+	deck_node_t *itr, *insert, *temp;
 
-	for (iter = (*deck)->next; iter != NULL; iter = temp)
+	for (itr = (*deck)->next; itr != NULL; itr = temp)
 	{
-		temp = iter->next;
-		insert = iter->prev;
+		temp = itr->next;
+		insert = itr->prev;
 		while (insert != NULL &&
-		       insert->card->kind == iter->card->kind &&
-		       get_value(insert) > get_value(iter))
+		       insert->card->kind == itr->card->kind &&
+		       get_value(insert) > get_value(itr))
 		{
-			insert->next = iter->next;
-			if (iter->next != NULL)
-				iter->next->prev = insert;
-			iter->prev = insert->prev;
-			iter->next = insert;
+			insert->next = itr->next;
+			if (itr->next != NULL)
+				itr->next->prev = insert;
+			itr->prev = insert->prev;
+			itr->next = insert;
 			if (insert->prev != NULL)
-				insert->prev->next = iter;
+				insert->prev->next = itr;
 			else
-				*deck = iter;
-			insert->prev = iter;
-			insert = iter->prev;
+				*deck = itr;
+			insert->prev = itr;
+			insert = itr->prev;
 		}
 	}
 }
