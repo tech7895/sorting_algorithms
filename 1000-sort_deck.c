@@ -7,11 +7,11 @@ void insertion_sort_deck_value(deck_node_t **deck);
 void sort_deck(deck_node_t **deck);
 
 /**
- * _strcmp - Compares two strings.
- * @s1: The first string to be compared.
- * @s2: The second string to be compared.
+ * _strcmp - This compares two strings.
+ * @s1: the first string
+ * @s2: The second string
  *
- * Return: Positive byte difference if s1 > s2
+ * Return: the positive byte difference if s1 > s2
  *         0 if s1 == s2
  *         Negative byte difference if s1 < s2
  */
@@ -29,10 +29,11 @@ int _strcmp(const char *s1, const char *s2)
 }
 
 /**
- * get_value - Get the numerical value of a card.
- * @card: A pointer to a deck_node_t card.
+ * get_value - This gets the numerical value of a card
+ * @card: A pointer to a deck_node_t card
  *
- * Return: The numerical value of the card.
+ * Return: The numerical value of the card
+ *
  */
 char get_value(deck_node_t *card)
 {
@@ -66,16 +67,17 @@ char get_value(deck_node_t *card)
 }
 
 /**
- * insertion_sort_deck_kind - Sort a deck of cards from spades to diamonds.
+ * insertion_sort_deck_kind - This sorts a deck of cards from
+ * spades to diamonds.
  * @deck: A pointer to the head of a deck_node_t doubly-linked list.
  */
 void insertion_sort_deck_kind(deck_node_t **deck)
 {
-	deck_node_t *iter, *insert, *tmp;
+	deck_node_t *iter, *insert, *temp;
 
-	for (iter = (*deck)->next; iter != NULL; iter = tmp)
+	for (iter = (*deck)->next; iter != NULL; iter = temp)
 	{
-		tmp = iter->next;
+		temp = iter->next;
 		insert = iter->prev;
 		while (insert != NULL && insert->card->kind > iter->card->kind)
 		{
@@ -101,11 +103,11 @@ void insertion_sort_deck_kind(deck_node_t **deck)
  */
 void insertion_sort_deck_value(deck_node_t **deck)
 {
-	deck_node_t *iter, *insert, *tmp;
+	deck_node_t *iter, *insert, *temp;
 
-	for (iter = (*deck)->next; iter != NULL; iter = tmp)
+	for (iter = (*deck)->next; iter != NULL; iter = temp)
 	{
-		tmp = iter->next;
+		temp = iter->next;
 		insert = iter->prev;
 		while (insert != NULL &&
 		       insert->card->kind == iter->card->kind &&
@@ -127,9 +129,10 @@ void insertion_sort_deck_value(deck_node_t **deck)
 }
 
 /**
- * sort_deck - Sort a deck of cards from ace to king and
+ * sort_deck - This sorts a deck of cards from ace to king and
  *             from spades to diamonds.
- * @deck: A pointer to the head of a deck_node_t doubly-linked list.
+ * @deck: A pointer to the head of a deck_node_t
+ * doubly-linked list.
  */
 void sort_deck(deck_node_t **deck)
 {
