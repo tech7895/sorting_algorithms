@@ -3,12 +3,14 @@
 
 #include <stdlib.h>
 
+
 /**
- * enum kind_e - Enumeration of card suits.
- * @SPADE: Spades suit.
- * @HEART: Hearts suit.
- * @CLUB: Clubs suit.
- * @DIAMOND: Diamonds suit.
+ * enum kind_e - The enumeration of card suits.
+ * @SPADE: Spades suit
+ * @HEART: Hearts suit
+ * @CLUB: Clubs suit
+ * @DIAMOND: Diamonds suit
+ *
  */
 typedef enum kind_e
 {
@@ -19,10 +21,11 @@ typedef enum kind_e
 } kind_t;
 
 /**
- * struct card_s - Playing card
+ * struct card_s - The playing card
  *
  * @value: Value of the card
  * From "Ace" to "King"
+ *
  * @kind: Kind of the card
  */
 typedef struct card_s
@@ -32,11 +35,11 @@ typedef struct card_s
 } card_t;
 
 /**
- * struct deck_node_s - Deck of card
+ * struct deck_node_s - The deck of card
  *
- * @card: Pointer to the card of the node
- * @prev: Pointer to the previous node of the list
- * @next: Pointer to the next node of the list
+ * @card: a pointer to the card of the node
+ * @prev: a pointer to the previous node of the list
+ * @next: a pointer to the next node of the list
  */
 typedef struct deck_node_s
 {
