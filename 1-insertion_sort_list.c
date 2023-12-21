@@ -32,14 +32,14 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *iter, *insert, *temp;
+	listint_t *iter, *insert, *tp;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	for (iter = (*list)->next; iter != NULL; iter = temp)
+	for (iter = (*list)->next; iter != NULL; iter = tp)
 	{
-		temp = iter->next;
+		tp = iter->next;
 		insert = iter->prev;
 		while (insert != NULL && iter->n < insert->n)
 		{

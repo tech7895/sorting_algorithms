@@ -14,11 +14,11 @@ void quick_sort_hoare(int *array, size_t size);
  */
 void swap_ints(int *a, int *b)
 {
-	int temp;
+	int tp;
 
-	temp = *a;
+	tp = *a;
 	*a = *b;
-	*b = temp;
+	*b = tp;
 }
 
 /**

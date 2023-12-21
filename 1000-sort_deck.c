@@ -72,11 +72,11 @@ char get_value(deck_node_t *card)
  */
 void insertion_sort_deck_kind(deck_node_t **deck)
 {
-	deck_node_t *itr, *insert, *temp;
+	deck_node_t *itr, *insert, *tp;
 
-	for (itr = (*deck)->next; itr != NULL; itr = temp)
+	for (itr = (*deck)->next; itr != NULL; itr = tp)
 	{
-		temp = itr->next;
+		tp = itr->next;
 		insert = itr->prev;
 		while (insert != NULL && insert->card->kind > itr->card->kind)
 		{
@@ -102,11 +102,11 @@ void insertion_sort_deck_kind(deck_node_t **deck)
  */
 void insertion_sort_deck_value(deck_node_t **deck)
 {
-	deck_node_t *itr, *insert, *temp;
+	deck_node_t *itr, *insert, *tp;
 
-	for (itr = (*deck)->next; itr != NULL; itr = temp)
+	for (itr = (*deck)->next; itr != NULL; itr = tp)
 	{
-		temp = itr->next;
+		tp = itr->next;
 		insert = itr->prev;
 		while (insert != NULL &&
 		       insert->card->kind == itr->card->kind &&
